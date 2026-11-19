@@ -1,0 +1,33 @@
+{
+  "name": "opencode-sol-pi",
+  "version": "0.1.0",
+  "description": "Context and tool-efficiency mechanisms for OpenCode V2, ported from the SoL-Pi Pi extension",
+  "type": "module",
+  "private": false,
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "files": [
+    "src"
+  ],
+  "scripts": {
+    "typecheck": "tsc --noEmit",
+    "test": "bun test test"
+  },
+  "keywords": [
+    "opencode-plugin",
+    "context-management",
+    "token-efficiency"
+  ],
+  "dependencies": {
+    "@opencode/plugin": "latest"
+  },
+  "devDependencies": {
+    "@types/node": "latest",
+    "typescript": "latest"
+  },
+  "license": "MIT",
+  "engines": {
+    "node": ">=22"
+  }
+}
