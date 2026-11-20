@@ -70,7 +70,7 @@ export function createObservation(
   if (containsReducerReceipt(text)) return undefined
   const bytes = Buffer.byteLength(text, "utf8")
   if (bytes <= THRESHOLD_BYTES) return undefined
-  if (!runtimeRoot) throw new Error("SoL-Pi runtime directory is unavailable")
+  if (!runtimeRoot) throw new Error("opencode-sol-pi runtime directory is unavailable")
 
   const contentHash = hash(text)
   const id = `obs_${hash(`${result.toolName}\0${result.toolCallId}\0${contentHash}`).slice(0, 24)}`

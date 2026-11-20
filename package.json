@@ -1,7 +1,7 @@
 {
   "name": "opencode-sol-pi",
   "version": "0.1.0",
-  "description": "Context and tool-efficiency mechanisms for OpenCode V2, ported from the SoL-Pi Pi extension",
+  "description": "Context and tool-efficiency mechanisms for OpenCode V2 (action fusion, observation packing, evidence reduction, online compaction)",
   "type": "module",
   "private": false,
   "exports": {

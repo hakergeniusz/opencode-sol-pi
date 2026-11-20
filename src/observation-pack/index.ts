@@ -1,9 +1,9 @@
 /*
  * ObservationPack — keep large tool results reachable without replaying them.
  *
- * OpenCode mapping: the Pi `context` event becomes `ctx.session.hook("context", ...)`.
- * We rewrite only the outgoing projection (the hook's message drafts), never
- * stored history, so exact recall keeps working across compaction and resume.
+ * Uses `ctx.session.hook("context", ...)` to rewrite only the outgoing
+ * projection (message drafts), never stored history, so exact recall keeps
+ * working across compaction and resume.
  */
 import { join } from "node:path"
 import type { PluginContext } from "../types.ts"
@@ -209,7 +209,7 @@ export function registerObservationPack(ctx: PluginContext): void {
             removedTokens,
           })
           // Mutate the same message part in place to preserve the request's
-          // cached prefix (the Pi original relied on the same invariant).
+          // cached prefix.
           slot.write(placeholder)
           sentCounts.set(sendCountKey, previousSends + 1)
         } catch (error) {
