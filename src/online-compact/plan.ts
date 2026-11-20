@@ -1,4 +1,4 @@
-/* Ported verbatim from online-context-compact/plan.ts (Buffer is Node's). */
+/* Plan parsing and transition analysis for Online Context Compact. */
 
 export const PLAN_STATUSES = ["pending", "in_progress", "completed"] as const
 export type PlanStatus = (typeof PLAN_STATUSES)[number]

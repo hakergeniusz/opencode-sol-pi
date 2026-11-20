@@ -1,4 +1,4 @@
-/* Ported from archive.ts (Pi APIs removed). */
+/* Archive storage for reducer source bodies. */
 import { mkdir, readFile, writeFile } from "node:fs/promises"
 import { join } from "node:path"
 import { isRecord, type ReducerConfig, sha256 } from "./config.ts"

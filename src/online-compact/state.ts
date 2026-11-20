@@ -1,9 +1,8 @@
 /*
- * Online Context Compact state (ported from state.ts).
+ * Online Context Compact persisted state.
  *
- * Pi stored state in session custom entries; the OpenCode V2 plugin API has no
- * equivalent custom-entry facade, so state is persisted as JSON under the
- * session's SoL-Pi runtime root and restored from there.
+ * State is persisted as JSON under the session runtime root and restored from
+ * there.
  */
 import { mkdir, readFile, writeFile } from "node:fs/promises"
 import { dirname, join } from "node:path"
@@ -145,7 +144,7 @@ export async function restoreOnlineState(root: string): Promise<OnlineState> {
     const parsed = parseOnlineState(JSON.parse(raw))
     if (parsed) return parsed
   } catch {
-    // Missing or corrupt state starts fresh, matching the Pi behavior.
+    // Missing or corrupt state starts fresh.
   }
   return initialOnlineState()
 }

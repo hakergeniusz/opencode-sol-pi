@@ -1,4 +1,4 @@
-/* Ported verbatim from online-context-compact/economics.ts (no Pi APIs). */
+/* Online Context Compact economics and decision logic. */
 
 export type CompactionEconomics = {
   readonly remainingRequestScale: number

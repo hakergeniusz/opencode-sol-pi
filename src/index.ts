@@ -1,5 +1,5 @@
 /*
- * opencode-sol-pi — native OpenCode V2 port of the SoL-Pi Pi extension.
+ * opencode-sol-pi — context- and tool-efficiency mechanisms for OpenCode V2.
  *
  * Four opt-in efficiency mechanisms, all disabled by default:
  *   - Action Fusion: edit/write with an optional `then_run` validation command.

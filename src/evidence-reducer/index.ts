@@ -3,8 +3,8 @@
  * log to a configured model, but accept its receipt only when every quoted
  * line is found byte-for-byte in the archived source.
  *
- * OpenCode mapping: the Pi `tool_result` hook becomes `ctx.tool.hook("execute.after")`,
- * where a completed tool result can be inspected and replaced in place.
+ * Uses `ctx.tool.hook("execute.after")`, where a completed tool result can be
+ * inspected and replaced in place.
  */
 import { Buffer } from "node:buffer"
 import type { PluginContext } from "../types.ts"

@@ -1,4 +1,4 @@
-/* Ported from evidence-preserving-reducer/config.ts (Pi APIs removed). */
+/* Evidence-preserving reducer configuration and constants. */
 import { createHash } from "node:crypto"
 import { join } from "node:path"
 import { DEFAULT_REDUCER_MODEL, DEFAULT_REDUCER_PROVIDER } from "../config.ts"

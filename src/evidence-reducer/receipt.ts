@@ -1,4 +1,4 @@
-/* Ported from receipt.ts (Pi APIs removed). Verification logic is unchanged. */
+/* Receipt construction and verification logic. */
 import type { ArchiveObject } from "./archive.ts"
 import {
   FAILURE_SIGNAL,
@@ -144,7 +144,7 @@ export function receiptText(
   }
   if (validated.evidence.length === 0) lines.push("- none")
   lines.push(
-    "authority=Sol retains diagnosis, repair, rerun, and pass/fail adjudication",
+    "authority=The agent retains diagnosis, repair, rerun, and pass/fail adjudication",
     "readback=use bash with an explicit byte or line range on source_artifact when exact context is needed",
   )
   return lines.join("\n")

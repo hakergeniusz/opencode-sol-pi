@@ -1,12 +1,11 @@
 /*
  * Action Fusion — fuse a file mutation and its follow-up validation command
- * into one tool call. Ported from the Pi extension's action-fusion module.
+ * into one tool call.
  *
- * OpenCode mapping: instead of rebuilding Pi's built-in edit/write tool
- * definitions, we transform OpenCode's existing `edit`/`write` tools in place,
- * adding an optional `then_run` field and wrapping their executors. The command
- * itself is delegated to OpenCode's `bash` tool executor, so permissions and
- * shell settings remain under OpenCode's control.
+ * Transforms OpenCode's existing `edit`/`write` tools in place, adding an
+ * optional `then_run` field and wrapping their executors. The command itself is
+ * delegated to OpenCode's `bash` tool executor, so permissions and shell
+ * settings remain under OpenCode's control.
  */
 import { createHash } from "node:crypto"
 import { realpath, readFile } from "node:fs/promises"

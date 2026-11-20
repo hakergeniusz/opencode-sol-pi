@@ -2,16 +2,14 @@
  * Online Context Compact — completed plan steps become safe, economical
  * points for native compaction, and the parent task is resumed afterwards.
  *
- * OpenCode mapping:
+ * Implementation notes:
  *  - `update_plan` is a normal registered tool (model-only / codemode:false).
- *  - `pi.on("context")` / request accounting → `ctx.session.hook("context")`.
- *  - `pi.on("input")` correction handling → `ctx.session.hook("prompt")`.
- *  - `pi.on("session_compact")` → `ctx.session.hook("compaction")`.
- *  - `context.compact()` + `pi.sendMessage({triggerTurn:true})` →
- *    `ctx.session.compact({delivery:"queue"})` + `ctx.session.prompt({delivery:"queue"})`,
- *    which preserves the "compact, then continue in a new turn" ordering.
- *  - persisted state moves from session custom entries to a JSON file under
- *    the session's runtime root.
+ *  - Request accounting and projection updates run in `ctx.session.hook("context")`.
+ *  - Correction handling runs in `ctx.session.hook("prompt")`.
+ *  - Compaction bookkeeping runs in `ctx.session.hook("compaction")`.
+ *  - `ctx.session.compact({delivery:"queue"})` + `ctx.session.prompt({delivery:"queue"})`
+ *    preserve "compact, then continue in a new turn" ordering.
+ *  - Persisted state is stored as JSON under the session's runtime root.
  */
 import type { PluginContext } from "../types.ts"
 import { runtimeRoot } from "../runtime-paths.ts"

@@ -1,4 +1,4 @@
-/* Dependency-free port of the original's pure-logic tests (bun test). */
+/* Dependency-free pure-logic tests (bun test). */
 import { describe, expect, test } from "bun:test"
 import { decideCompaction, DEFAULT_COMPACTION_ECONOMICS, estimateRemainingRequests } from "../src/online-compact/economics.ts"
 import { analyzePlanTransition, formatPlanSnapshot, parsePlanSteps } from "../src/online-compact/plan.ts"

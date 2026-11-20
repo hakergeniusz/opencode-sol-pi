@@ -1,11 +1,10 @@
 /*
  * Reducer model call.
  *
- * Pi used its model registry plus `pi-ai/compat` `complete()`. OpenCode V2 uses
- * `ctx.experimental.generate.text({ model, prompt })`, which keeps provider
- * routing and authentication under OpenCode. The reducer instructions and the
- * untrusted log are combined into one prompt because this API has no separate
- * system-prompt parameter (documented as a gap in the README).
+ * Uses `ctx.experimental.generate.text({ model, prompt })`, which keeps
+ * provider routing and authentication under OpenCode. The reducer instructions
+ * and the untrusted log are combined into one prompt because this API has no
+ * separate system-prompt parameter.
  */
 import type { ArchiveObject } from "./archive.ts"
 import type { ReducerConfig } from "./config.ts"

@@ -45,7 +45,7 @@ export function registerOnlineTools(ctx: PluginContext, handlers: OnlineToolHand
     editor.add({
       name: "update_plan",
       description:
-        "Replace the complete working plan. Completing a previously registered unfinished step becomes a safe point where SoL-Pi may compact context if doing so is economical. Newly introduced completed steps are recorded as history.",
+        "Replace the complete working plan. Completing a previously registered unfinished step becomes a safe point where context may be compacted if doing so is economical. Newly introduced completed steps are recorded as history.",
       input: {
         type: "object",
         properties: {
@@ -56,7 +56,7 @@ export function registerOnlineTools(ctx: PluginContext, handlers: OnlineToolHand
         additionalProperties: false,
       },
       // `codemode: false` keeps the tool model-callable but out of codemode
-      // scripts, mirroring the Pi original's model-only exposure.
+      // scripts.
       options: { codemode: false },
       execute: async (input: any, context: any) =>
         handlers.updatePlan({

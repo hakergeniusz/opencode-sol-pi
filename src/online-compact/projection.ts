@@ -1,12 +1,9 @@
 /*
  * Estimate the tokens a native compaction would archive.
  *
- * Pi's original used private session-entry projection helpers (`findCutPoint`,
- * `buildSessionProjection`, `sessionEntryToContextMessages`). Those are not
- * exposed by the OpenCode V2 plugin API, so this port uses the message drafts
- * from the `context` hook: it keeps the most recent `keepRecentTokens` of token
- * traffic (system messages survive compaction) and prices the older prefix as
- * removable. This is a conservative approximation, documented in the README.
+ * Uses message drafts from the `context` hook: it keeps the most recent
+ * `keepRecentTokens` of token traffic (system messages survive compaction) and
+ * prices the older prefix as removable. This is a conservative approximation.
  */
 export function estimateMessageTokens(message: unknown): number {
   try {
